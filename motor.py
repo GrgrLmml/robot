@@ -3,6 +3,8 @@ from time import sleep
 
 class Motor():
 
+    pwmr = None
+
     def __init__(self):
         GPIO.cleanup()
         GPIO.setmode(GPIO.BOARD)
