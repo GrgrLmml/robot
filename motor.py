@@ -6,13 +6,12 @@ class MOTOR():
     pwmr = None
 
     def __init__(self):
-        self.M = 10
         GPIO.cleanup()
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(3, GPIO.OUT)
         GPIO.setup(5, GPIO.OUT)
         GPIO.setup(7, GPIO.OUT)
-        self.pwmr = GPIO(7, 100)
+        self.pwmr = GPIO.PWM(7, 100)
         self.pwmr.start(0)
 
     def rfwd(self):
